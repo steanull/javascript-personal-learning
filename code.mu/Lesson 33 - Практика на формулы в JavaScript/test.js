@@ -24,5 +24,20 @@ describe('Практика на формулы в JavaScript', function () {
         for (let i = 0; i <= 10; i++) {
             makeTestSquareArea(i);
         }
-    })
+    });
+
+    describe('Нахождение площади прямоугольника', function () {
+        function makeTestRectangleArea(a, b) {
+            let s = a * b;
+            it(`Площадь прямоугольника со сторонами ${a} и ${b} равна ${s}`, function () {
+               assert.equal(getRectangleArea(a, b), s);
+            });
+        }
+
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
+                makeTestRectangleArea(i, j);
+            }
+        }
+    });
 });
